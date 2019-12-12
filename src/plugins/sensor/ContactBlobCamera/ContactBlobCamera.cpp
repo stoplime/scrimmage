@@ -420,8 +420,8 @@ bool ContactBlobCamera::step() {
         std::string window_name = window_name_ + "-" +
                 std::to_string(parent_->id().id()) + "-" +
                 std::to_string(camera_id_);
-        cv::imshow(window_name.c_str(), msg->data.frame);
-        cv::waitKey(1);
+        // cv::imshow(window_name.c_str(), msg->data.frame);
+        // cv::waitKey(1);
     }
 
     // Log any detections
@@ -484,8 +484,8 @@ void ContactBlobCamera::draw_object_with_bounding_box(
     cv::rectangle(frame, rect, cv::Scalar(0, 0, 255), 1, 8, 0);
 
     cv::Point top_left(rect.x + rect.width, rect.y + rect.height);
-    cv::putText(frame, std::to_string(id), top_left,  cv::FONT_HERSHEY_SIMPLEX,
-                1.0, cv::Scalar(8, 100, 22), 1, 8, false);
+    // cv::putText(frame, std::to_string(id), top_left,  cv::FONT_HERSHEY_SIMPLEX,
+    //             1.0, cv::Scalar(8, 100, 22), 1, 8, false);
 }
 
 void ContactBlobCamera::set_plugin_params(std::map<std::string, double> params) {
