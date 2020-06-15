@@ -230,9 +230,13 @@ def parallel(num_runs, mission, cores):
 
     for i in range(num_runs):
         cmd.append(str(i))
-        cmd.append(mission)
+        if isinstance(mission, list):
+            cmd.append(mission[i])
+        else:
+            cmd.append(mission)
 
     FNULL = open(os.devnull, 'w')
+    # print(" ".join(cmd))
     subprocess.call(cmd, stdout=FNULL, stderr=FNULL)
 
 
