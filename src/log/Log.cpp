@@ -85,6 +85,7 @@ bool Log::open_file(std::string filename, int &fd) {
 }
 
 bool Log::init(const std::string &dir, Log::Mode mode) {
+    set_enable_log(false);
     mode_ = mode;
     log_dir_ = dir;
 
